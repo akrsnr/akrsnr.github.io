@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-navbutton-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+  <meta name="description" content="You have used String class of Java hundred times, however, you feel yourself to know adequately about it. But, early to decide!
+
+As you know, if not now ...">
+  <meta name="author" content="Soner Akar">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Bits",
+      "item": "http://localhost:4000/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "java",
+      "item": "http://localhost:4000/java"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Difference Between Equality Operator Equals Method",
+      "item": "http://localhost:4000//java/Difference-between-equality-operator-equals-method.html"
+    }]
+  }</script>
+  <title>Difference Between Equality Operator Equals Method | Soner</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Inconsolata" rel="stylesheet">
+  
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/print.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/public/favicon.ico?v=20191124">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <style>.blink{animation:blink 1s infinite;}@keyframes blink{to{opacity:.0}}a.monospace{font-family:Inconsolata;}</style>
+</head>
+
+  <body>
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a class="monospace" href="/">
+          Soner<span class="blink">_</span>
+          </a>
+        </a>
+      </h1>
+      <p class="lead">Simplicity is the ultimate sophistication</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="http://localhost:4000">Home</a>
+      <a class="sidebar-nav-item" href="soner.cv.pdf">Resumé</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/contact">Contact</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+
+      <!--
+      <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
+      <a class="sidebar-nav-item" href="">GitHub project</a>-->
+      <!--<span class="sidebar-nav-item">Currently v</span>-->
+
+      <p>
+        <br><a href="https://github.com/akrsnr"><i class="fa fa-fw fa-github"></i> Github</a>
+        <br><a href="https://stackoverflow.com/users/4990642/snr"><i class="fa fa-fw fa-stack-overflow"></i> StackOverflow</a>
+        <br><a href="https://linkedin.com/in/sonerakar"><i class="fa fa-fw fa-linkedin"></i> LinkedIn</a>
+        </p>
+
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+
+
+   
+      <span>
+    Made with <i class="fa fa-heart heart fa-4x fa-beat"></i> in <a href="https://goo.gl/maps/ckrH3S8zRbBpQRT89" target="_blank">Gebze</a>
+ 
+</span>
+  </div>
+</div>
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Difference Between Equality Operator Equals Method</h1>
+  <hr>
+  <i class="fa fa-fw fa-calendar"></i>22 Jan 2018 <i class="fa fa-fw fa-tag"></i><a href="/java">java</a>
+  <hr>
+  <!-- comment
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-9642838276352812"
+       data-ad-slot="2958174403"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+-->
+  <p>You have used String class of Java hundred times, however, you feel yourself to know adequately about it. But, early to decide!</p>
+
+<p>As you know, if not now time to learn, equality checking operator <code class="highlighter-rouge">==</code> is used to compare references, whereas <code class="highlighter-rouge">equals()</code> method is used to compare whether or not strings are filled up by the same contents.</p>
+
+<p>Let’s see your level, what is the output of the following?</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">"Soner"</span><span class="o">;</span>
+<span class="nc">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">"Soner"</span><span class="o">;</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str2</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>I seem to hear that it will result in totally false! Cray-cray adorbs of course true! Let’s examine why. In the case of variables <code class="highlighter-rouge">str1</code> and <code class="highlighter-rouge">str2</code>, the objects are created and stored in a <strong>pool of String objects</strong>. Before creating a new object in the pool, Java searches for an object with similar contents. When the following line of code executes, no String object with the value
+<code class="highlighter-rouge">"Soner"</code> is found in the pool of String objects:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">"Soner"</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>As a result, Java creates a String object with the value <code class="highlighter-rouge">"Soner"</code> in the pool of String
+objects referred to by the variable str1.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Creates a new String object with value
+    Morning in the String constant pool */</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Morning"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>These values are reused from the String constant pool if a matching value is found. If
+a matching value isn’t found, the JVM creates a String object with the specified value
+and places it in the String constant pool:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">morning1</span> <span class="o">=</span> <span class="s">"Morning"</span><span class="o">;</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Morning"</span> <span class="o">==</span> <span class="n">morning1</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Compare the preceding example with the following example, which creates a String
+object using the operator new and (only) double quotes and then compares their
+references:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* This String object is not placed
+	in the String constant pool.
+	So it will give false output */</span>
+<span class="nc">String</span> <span class="n">morning2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"Morning"</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Morning"</span> <span class="o">==</span> <span class="n">morning2</span><span class="o">);</span>
+</code></pre></div></div>
+
+<blockquote><p>
+<span style="color:blue">Note:</span> The terms <b>String constant pool</b> and <b>String pool</b> are used interchangeably and refer to the same pool of String objects.
+</p></blockquote>
+
+<p>Whether test your comprehension, take a glance at the following code to count total number of String objects being created.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OMGString</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">String</span> <span class="n">soner</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"Soner"</span><span class="o">);</span> 	<span class="c1">// 1</span>
+		<span class="nc">String</span> <span class="n">soner2</span> <span class="o">=</span> <span class="s">"Soner"</span><span class="o">;</span>				<span class="c1">// 2</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Soner"</span><span class="o">);</span>			<span class="c1">// 3</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"akar"</span><span class="o">);</span>				<span class="c1">// 4</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"akar"</span> <span class="o">==</span> <span class="s">"soner"</span><span class="o">);</span>	<span class="c1">// 5</span>
+		<span class="nc">String</span> <span class="n">akar</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"Soner"</span><span class="o">);</span>		<span class="c1">// 6</span>
+		<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<details>
+  <summary>
+➡ How many String objects being created are there?
+<i>Click here to see the answer.</i> ↴
+ </summary>
+
+* The code at ① creates a new String object with the value `"Soner"`. This object
+is not placed in the String constant pool.
+* The code at ② creates a new String object with the value `"Soner"` and places
+it in the String constant pool.
+* The code at ③ doesn’t need to create any new String object. It reuses the
+String object with the value `"Soner"` that already existed in the String con-
+stant pool.
+* The code at ④ creates a new String object with the value `"akar"` and places
+it in the String constant pool.
+* The code at ⑤ reuses the String value `"akar"` from the String constant
+pool. It creates a String object with the value "soner" in the String con-
+stant pool (note the difference in the case of letters—Java is case-sensitive and
+`"Soner"` is not the same as `"soner"` ).
+* The code at ⑥ creates a new String object with the value `"Soner"`.
+
+
+<blockquote><p>
+<span style="color:blue">Answer:</span>
+<i>The previous code creates a total of five String objects.</i>
+</p></blockquote>
+
+</details>
+
+<p>That’s all. I hope that it wouldn’t be waste of time.</p>
+
+  <!-- comment
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-9642838276352812"
+       data-ad-slot="7351100586"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  -->
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://soner-dev.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
+
+    </div>
+  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57632461-7', 'auto');
+  ga('send', 'pageview');
+</script>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-navbutton-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+  <meta name="description" content="The Custom Specifiers
+
+I had difficulty in grasping the format specifiers while studying. I couldn’t find educational explanatory web pages on which I ca...">
+  <meta name="author" content="Soner Akar">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Bits",
+      "item": "http://localhost:4000/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "csharp",
+      "item": "http://localhost:4000/csharp"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Custom Specifiers in C# ",
+      "item": "http://localhost:4000//csharp/the-custom-specifiers.html"
+    }]
+  }</script>
+  <title>The Custom Specifiers in C#  | Soner</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Inconsolata" rel="stylesheet">
+  
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/print.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/public/favicon.ico?v=20191124">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <style>.blink{animation:blink 1s infinite;}@keyframes blink{to{opacity:.0}}a.monospace{font-family:Inconsolata;}</style>
+</head>
+
+  <body>
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a class="monospace" href="/">
+          Soner<span class="blink">_</span>
+          </a>
+        </a>
+      </h1>
+      <p class="lead">Simplicity is the ultimate sophistication</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="http://localhost:4000">Home</a>
+      <a class="sidebar-nav-item" href="soner.cv.pdf">Resumé</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/contact">Contact</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+
+      <!--
+      <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
+      <a class="sidebar-nav-item" href="">GitHub project</a>-->
+      <!--<span class="sidebar-nav-item">Currently v</span>-->
+
+      <p>
+        <br><a href="https://github.com/akrsnr"><i class="fa fa-fw fa-github"></i> Github</a>
+        <br><a href="https://stackoverflow.com/users/4990642/snr"><i class="fa fa-fw fa-stack-overflow"></i> StackOverflow</a>
+        <br><a href="https://linkedin.com/in/sonerakar"><i class="fa fa-fw fa-linkedin"></i> LinkedIn</a>
+        </p>
+
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+
+
+   
+      <span>
+    Made with <i class="fa fa-heart heart fa-4x fa-beat"></i> in <a href="https://goo.gl/maps/ckrH3S8zRbBpQRT89" target="_blank">Gebze</a>
+ 
+</span>
+  </div>
+</div>
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">The Custom Specifiers in C# </h1>
+  <hr>
+  <i class="fa fa-fw fa-calendar"></i>23 Nov 2019 <i class="fa fa-fw fa-tag"></i><a href="/csharp">csharp</a>
+  <hr>
+  <!-- comment
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-9642838276352812"
+       data-ad-slot="2958174403"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+-->
+  <h1 id="the-custom-specifiers">The Custom Specifiers</h1>
+
+<p>I had difficulty in grasping the format specifiers while studying. I couldn’t find educational explanatory web pages on which I can grasp perspicuously then I made a decision to write some notes. I assume your <a href="https://rextester.com/HVGS41537">culture setting</a> is <em>en-US</em>.</p>
+
+<h2 id="the-0-custom-specifier">The “0” custom specifier</h2>
+
+<h3 id="for-the-integer-part">For the integer part,</h3>
+
+<p>If number of digits of the given number are greater than number of “0” placeholders what presented is displayed.</p>
+
+<p>If being less, leading $0$ digits are appended.</p>
+
+<h3 id="for-the-decimal-part">For the decimal part,</h3>
+
+<p>If number of digits of the given number are greater than number of “0” placeholders, the decimal part is rounded as much as total digits of the “0” placeholders.</p>
+
+<p>If being less, trailing zero(s) are appended.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Number is rounded if includes more decimal places then the custom specifier.
+Console.WriteLine($"{786.128:000.00}"); // 786.13
+Console.WriteLine($"{786.1:0000.000}"); // 0786.100
+</code></pre></div></div>
+
+<h2 id="the-octothorp-custom-specifier">The “#”(octothorp) custom specifier</h2>
+
+<h3 id="for-the-integer-part-1">For the integer part,</h3>
+
+<p>If number of digits of the given number are <em>greater than</em> number of “#” placeholders, what presented is displayed.</p>
+
+<p>If being less, what presented is displayed. That is to say, there is no any leading digits.</p>
+
+<h3 id="for-the-decimal-part-1">For the decimal part,</h3>
+
+<p>If number of digits of the given number are <em>greater than</em> number of “#” placeholders, the decimal part is rounded as much as total digits of the “#” placeholders. (same as the case of “0” placeholder)</p>
+
+<p>If being less, nothing is appended, that is to say what presented is displayed.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Console.WriteLine($"{2.7:0##.#}"); // 002.7
+// Number is rounded if includes more decimal places then the custom specifier.
+Console.WriteLine($"{786.36:0######.#}"); // 0000786.4 **
+Console.WriteLine($"{786.348:######0.##}"); // 786.35
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Note 1:</strong> Rounding logic in the placeholder usage is done by the following rule.
+If a digit following immediately the digit being rounded is greater or equal to 5, the digit is increased by 1.
+If being less, it preserves its value.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Note 2:</strong> “#” placeholder doesn’t yield results to insignificant digits in the result string unlike “0” placeholder.</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// the four zeros are insignificant
+int value = 0000529;
+// the trailing zeros(6 pieces) are insignificant, but leading two.
+double value = 2.00324000000 
+// the whole number is insignificant
+double value = 0.0;
+</code></pre></div>  </div>
+</blockquote>
+
+<p>Let’s glance at some examples related to the notes.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>double value = 25.710;
+// both following yields same result, 26.
+// Remember Note 1 saying immediate following digit's value makes a basis for rounding.
+// left 5's following digit is 7(at the right-side).
+Console.WriteLine("{0:#.}", value);
+Console.WriteLine("{0:0.}", value);
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>double value = 0.01;
+double value2 = 0.07;
+
+// same as {0:#}
+Console.WriteLine("{0:#.}", value); // empty print due to integer part's insignificance
+// same as {0:0}
+Console.WriteLine("{0:0.}", value);
+
+// .1 is printed due to integer part's insignificance and decimal part's rounding
+Console.WriteLine("{0:#.#}", value2);
+Console.WriteLine("{0:0.0}", value2);
+</code></pre></div></div>
+
+<h2 id="the-comma-specifier">The comma(,) specifier</h2>
+
+<p>It used both to separate the number into thousand places and divide by 1000.
+I don’t like some explanations of Microsoft Documents, however, <a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings?redirectedfrom=MSDN#the--custom-specifier-2">the bullet explanations</a> are not bad.</p>
+
+<p>Read the bullets more than twice to comprehend the following example.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>double value = 911_271_222_876_919.12345;
+// double size is exceeded, so 911271222876919.1 is the output.
+Console.WriteLine(value);
+// so, the acutal number is 911_271_222_876_919.1
+// result is 911,271.2229
+Console.WriteLine("{0:#,0,,,.0000}", value);
+</code></pre></div></div>
+
+<p>Here’s my two cents that first examine the integer part then the decimal part.</p>
+
+<p>The number is divided by $1000^3$ since there are 3 commas at first as well as one more comma among two placeholders to get seperated output. It yields 911,271. But, we wish to get 4 more digits as a decimal part.
+In this case, the following digits of 911,271 make up the decimal part with rounding. So, the digits are 2, 2, 2, and 8. But since the actual numbers’ digits are greater than the four placeholders, “0000”, the decimal part is rounded to 2229.</p>
+
+<p>I’m not going on explaining the other specifiers i.e. <a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings?redirectedfrom=MSDN#the--custom-specifier-3">%</a> from now on since once you grasp the explained logic, the others are as easy as falling off a log.</p>
+
+<p>Additional examples can be found on <a href="https://web.archive.org/web/20191123153500/https://www.dotnetperls.com/format">this link</a> and <a href="https://web.archive.org/web/20191123153526/https://www.codebuns.com/csharp/numeric-formats/">this one</a>.</p>
+
+<p>If you find amiss point, please let me know  but to err  is  human,  you  know.  To  forgive  is  divine.</p>
+
+<p><em>Soner The Improver</em></p>
+
+  <!-- comment
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-9642838276352812"
+       data-ad-slot="7351100586"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  -->
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://soner-dev.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
+
+    </div>
+  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57632461-7', 'auto');
+  ga('send', 'pageview');
+</script>
+</html>
