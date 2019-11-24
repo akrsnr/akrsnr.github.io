@@ -1,4 +1,4 @@
-# Bits
+# Soner
 
 My blog, built using [Jekyll](https://github.com/jekyll/jekyll).
 
